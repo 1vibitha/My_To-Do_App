@@ -24,6 +24,7 @@ const Create = () => {
     }
 
   return (
+    <div className="back">
     <div className="main"> 
     <div className="head">
     <img src={icon} alt=""  style={{width:"40px", height:"40px"}}/>  
@@ -40,6 +41,7 @@ const Create = () => {
 
       </div>
           
+    </div>
     </div>
   )
 }

@@ -38,6 +38,7 @@ const Home = () => {
   }
 
   return (
+    <div className="back">
      <div className="main1"> 
        <div className="head">
        <img src={icon} alt=""  style={{width:"40px", height:"40px"}}/>  
@@ -64,6 +65,7 @@ const Home = () => {
              <Link to="/" className="nav-link">Add To-Do Task</Link>
        
              
+       </div>
        </div>
   )
 }
