@@ -7,6 +7,8 @@ import not_tick from './assets/not_tick.png'
 import delete_task from './assets/delete.png'
 import { Link } from "react-router-dom"
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
 
 const Home = () => {
 
@@ -14,7 +16,7 @@ const Home = () => {
 
   useEffect(() => {
 
-    axios.get('http://localhost:3000/get')
+    axios.get(backendUrl+'/get')
     .then((result) => setTodos(result.data))
     .catch((err) => console.log(err))
     
@@ -22,7 +24,7 @@ const Home = () => {
 
   const handleEdit = async (id) => {
 
-    const todo_edit = await axios.put('http://localhost:3000/update/'+id)
+    const todo_edit = await axios.put(backendUrl+'/update/'+id)
     console.log(todo_edit);
     
 
@@ -30,7 +32,7 @@ const Home = () => {
 
   const handleDelete = async (id) => {
 
-    const todo_delete = await axios.delete('http://localhost:3000/delete/'+id)
+    const todo_delete = await axios.delete(backendUrl+'/delete/'+id)
     console.log(todo_delete);
 
   }

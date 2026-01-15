@@ -5,13 +5,17 @@ import { useState } from "react"
 import axios from 'axios'
 import { Link, useNavigate } from "react-router-dom"
 
+
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
+
 const Create = () => {
     
     const [task, setTask] = useState("")
     const navigate = useNavigate()
     const handleAdd = async() => {
 
-        const newtask = await axios.post('http://localhost:3000/add' , {task:task})
+        const newtask = await axios.post(backendUrl+'/add' , {task:task})
         console.log(newtask);
         setTask("")
         navigate('/home')
