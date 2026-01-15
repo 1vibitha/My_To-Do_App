@@ -1,13 +1,12 @@
-
-.back{
-    min-height: 100%;
+body,html{
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: gray;
-    
 }
-.main1{
+
+.main{
     display:flex;
     flex-direction: column;
     justify-content: center;
