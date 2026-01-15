@@ -48,8 +48,8 @@ const Home = () => {
             todos.length === 0 ? 
             <div className="record">No record !</div> :
             todos.map((todo, index) => (
-              <div className="content2"> 
-              <div key ={index} className="all_task" >
+              <div  key ={index}  className="content2"> 
+              <div className="all_task" >
                 <img src={todo.done ? tick : not_tick} alt=""
                   onClick={() => {handleEdit(todo._id)}} />
                 <p className={`${todo.done ? "linethrough" : ""}`} >{todo.task}</p>
