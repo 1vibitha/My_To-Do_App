@@ -15,7 +15,7 @@ const Create = () => {
     const navigate = useNavigate()
     const handleAdd = async() => {
 
-        const newtask = await axios.post(backendUrl+'/add' , {task:task})
+        const newtask = await axios.post(`${backendUrl}/add` , {task:task})
         console.log(newtask);
         setTask("")
         navigate('/home')

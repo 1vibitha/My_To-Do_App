@@ -16,7 +16,7 @@ const Home = () => {
 
   useEffect(() => {
 
-    axios.get(backendUrl+'/get')
+    axios.get(`${backendUrl}/get`)
     .then((result) => setTodos(result.data))
     .catch((err) => console.log(err))
     
@@ -24,7 +24,7 @@ const Home = () => {
 
   const handleEdit = async (id) => {
 
-    const todo_edit = await axios.put(backendUrl+'/update/'+id)
+    const todo_edit = await axios.put(`${backendUrl}/update/${id}`)
     console.log(todo_edit);
     
 
@@ -32,7 +32,7 @@ const Home = () => {
 
   const handleDelete = async (id) => {
 
-    const todo_delete = await axios.delete(backendUrl+'/delete/'+id)
+    const todo_delete = await axios.delete(`${backendUrl}/delete/${id}`)
     console.log(todo_delete);
 
   }
