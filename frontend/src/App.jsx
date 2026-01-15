@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes } from "react-router-dom"
 import Home from './Home.jsx'
 import Create from './Create.jsx'
-
+import './App.css'
 
 const App = () => {
   return (
