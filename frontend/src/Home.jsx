@@ -38,7 +38,7 @@ const Home = () => {
   }
 
   return (
-     <div className="main"> 
+     <div className="main1"> 
        <div className="head">
        <img src={icon} alt=""  style={{width:"40px", height:"40px"}}/>  
          <p >Your To-Do Tasks</p>
