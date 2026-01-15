@@ -1,9 +1,12 @@
 body,html{
+     margin: 0;
+    padding: 0;
     min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: gray;
+
+    /* THIS ENABLES PAGE SCROLL */
+    display: block;
+    overflow-y: auto;
 }
 
 .main1{
@@ -12,16 +15,18 @@ body,html{
     justify-content: center;
     align-items: center;
     background-color: rgb(249, 249, 249);
-     width: 300px;
+    width: 600px;
 
-    /* IMPORTANT */
-    height: auto;          /* grow with content */
-    min-height: 60vh;      /* initial look */
+    /* IMPORTANT PART */
+    height: auto;          /* grow automatically */
+    min-height: 60vh;      /* initial height */
 
     margin: 30px auto;     /* center horizontally */
+
     padding: 20px;
     gap: 20px;
     border-radius: 10px;
+
 
 }
 .head{
