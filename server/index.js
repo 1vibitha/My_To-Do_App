@@ -10,6 +10,9 @@ const app = express()
 const allowedOrigins = [
   'http://localhost:5173'
 ]
+app.get('/', (req, res) => {
+  res.send('API is running');
+})
 
 
 app.use(express.json())
