@@ -1,5 +1,5 @@
 body,html{
-    height: 100%;
+    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,10 +12,13 @@ body,html{
     justify-content: center;
     align-items: center;
     background-color: rgb(249, 249, 249);
-    width: 250%;
-    height: 60vh;
-    place-self: center;
+     width: 600px;
+    max-height: 80vh;          /* limit height */
+    overflow-y: auto;  
+     margin: 30px auto;         /* center horizontally */
+    padding: 20px;
     gap: 20px;
+    border-radius: 10px;
 
 }
 .head{
