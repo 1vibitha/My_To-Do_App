@@ -1,64 +1,75 @@
-body,html{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: gray;
+/* ===== HOME PAGE ===== */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(249, 249, 249);
+  width: min(90%, 650px);
+  padding: 30px;
+  border-radius: 20px;
+  gap: 20px;
 }
 
-.main{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(249, 249, 249);
-    width: 250%;
-    height: 60vh;
-    place-self: center;
-    gap: 20px;
-
-}
-.head{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-.content{
-
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-
+/* HEADER */
+.head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
+  font-weight: 600;
 }
 
-.content2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* CONTENT */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
 }
-.all_task{
-   display: flex;
-   align-items: center;
-    width: 500px;
-    height: 50px;
-    background-color: white ;
-    text-align: center;
-    color: black;
-    font-size: 25px;
-    border-radius: 20px; 
-    gap:100px;   
+
+/* EACH TODO ROW */
+.content2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
+
+/* TODO CARD */
+.all_task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 55px;
+  padding: 0 20px;
+  background-color: white;
+  font-size: 22px;
+  border-radius: 20px;
+}
+
+/* ICONS */
 img {
-    cursor: pointer;
+  cursor: pointer;
 }
-.linethrough{
-    text-decoration: line-through;
-    color: grey;
+
+/* COMPLETED TASK */
+.linethrough {
+  text-decoration: line-through;
+  color: grey;
 }
-.record{
 
-    font-size: 25px;
-    font-weight: 400;
+/* EMPTY MESSAGE */
+.record {
+  font-size: 22px;
+  font-weight: 400;
+  color: #333;
+}
 
+/* LINK */
+.nav-link {
+  padding-top: 20px;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
 }
