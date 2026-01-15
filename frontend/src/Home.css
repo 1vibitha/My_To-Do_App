@@ -3,6 +3,7 @@
 .main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: rgb(249, 249, 249);
   width: min(90%, 650px);
