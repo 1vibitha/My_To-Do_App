@@ -51,7 +51,7 @@
   align-items: center;
   justify-content: space-between;
   background: #fafafa;
-  
+  gap:20px;
   padding: 30px 50px; 
   border-radius: 8px;
   border: 1px solid transparent;
