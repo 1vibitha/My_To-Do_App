@@ -3,22 +3,40 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   
-  /* CHANGE: Increased width and max-width for a much wider look */
   width: 90%; 
   max-width: 1200px; 
-  
   min-height: 500px;
   
-  /* CHANGE: Reduced side padding so tasks have more room to expand */
   padding: 60px 40px; 
-  
   border-radius: 30px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2),
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset;
   gap: 40px;
-  margin: 40px auto; /* Centers the whole app on the screen */
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.main1::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* HEADER */
@@ -26,11 +44,26 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  font-size: 32px;
-  font-weight: 700;
-  color: #2d3436;
-  width: 100%; /* Spans the full width */
+  font-size: 36px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  width: 100%;
   justify-content: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.head img {
+  filter: drop-shadow(0 4px 8px rgba(102, 126, 234, 0.4));
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
 /* CONTENT AREA */
@@ -38,99 +71,161 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 100%; /* Critical: Makes the list container fill the wide parent */
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
-/* INDIVIDUAL TASK ROW (The White Divs) */
+/* INDIVIDUAL TASK ROW */
 .content2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   
-  /* CHANGE: Increased padding for a more "expensive" spacious feel */
   padding: 30px 40px; 
-  
   border-radius: 20px;
-  border: 1px solid #f1f2f6;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   
-  /* CHANGE: Ensures the white div stretches to the full width of .content */
   width: 100%; 
   box-sizing: border-box; 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.content2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transform: scaleY(0);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content2:hover::before {
+  transform: scaleY(1);
 }
 
 .content2:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-  border-color: #ff5c0033;
+  transform: translateX(8px);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.3);
+  background: white;
 }
 
-/* TASK CONTENT (Icon + Text) */
+/* TASK CONTENT */
 .all_task {
   display: flex;
   align-items: center;
   gap: 25px;
-  flex: 1; /* Takes up all available space to push delete icon to the right */
+  flex: 1;
   cursor: pointer;
 }
 
 .all_task p {
-  font-size: 22px; /* Larger font for the wider layout */
+  font-size: 22px;
   color: #2d3436;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0;
+  transition: all 0.3s ease;
+}
+
+.all_task:hover p {
+  color: #667eea;
 }
 
 /* COMPLETED TASK STYLE */
 .linethrough {
   text-decoration: line-through;
   color: #b2bec3 !important;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 /* ICONS */
 .all_task img {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.all_task img:hover {
+  transform: scale(1.2) rotate(10deg);
 }
 
 .delete-icon {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   cursor: pointer;
-  opacity: 0.4;
-  transition: all 0.2s;
+  opacity: 0.3;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   margin-left: 20px;
+  filter: grayscale(100%);
 }
 
 .delete-icon:hover {
   opacity: 1;
-  transform: scale(1.2);
+  transform: scale(1.3) rotate(15deg);
+  filter: grayscale(0%) brightness(1.2);
 }
 
 /* EMPTY STATE */
 .record {
-  font-size: 24px;
-  color: #b2bec3;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.7);
   text-align: center;
-  margin-top: 20px;
+  margin-top: 40px;
+  font-weight: 600;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* NAV LINK */
 .nav-link {
   font-size: 18px;
   text-decoration: none;
-  color: #636e72;
+  color: white;
   font-weight: 600;
   margin-top: 20px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  transition: 0.3s;
+  padding: 14px 32px;
+  border-radius: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 1;
 }
 
 .nav-link:hover {
-  color: #ff5c00;
-  background: rgba(255, 92, 0, 0.05);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Task Entry Animation */
+.content2 {
+  animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
