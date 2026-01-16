@@ -55,11 +55,12 @@ const Home = () => {
                 <p className={`${todo.done ? "linethrough" : ""}`} >{todo.task}</p>
                 </div>
         
+                            
                 <img 
                   src={delete_task} 
-                  className="delete-icon" 
-                  alt="delete"
-                  onClick={() => {handleDelete(todo._id)}}
+                  alt="delete" 
+                  className="delete-icon" // Added this class
+                  onClick={() => handleDelete(todo._id)}
                 />
               </div>
             ))
