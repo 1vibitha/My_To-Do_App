@@ -6,7 +6,7 @@
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   width: 95%;
-  max-width: 800px; /* Matched to Create Page */
+  max-width: 1300px; /* Matched to Create Page */
   min-height: 500px;
   padding: 60px 50px;
   border-radius: 30px;
