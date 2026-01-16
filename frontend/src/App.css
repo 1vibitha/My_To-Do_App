@@ -7,18 +7,11 @@
 
 body, html {
   min-height: 100vh;
-  /* Premium Soft Gradient */
-  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%) no-repeat fixed;
+  /* Modern Gradient Background */
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center; /* Center vertically */
   padding: 20px;
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
-
-#root {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
