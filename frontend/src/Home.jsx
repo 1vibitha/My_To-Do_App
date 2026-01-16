@@ -9,67 +9,54 @@ import { Link } from "react-router-dom"
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
-
 const Home = () => {
-
   const [todos, setTodos] = useState([])
 
   useEffect(() => {
-
     axios.get(`${backendUrl}/get`)
-    .then((result) => setTodos(result.data))
-    .catch((err) => console.log(err))
-    
-  },[todos])
+      .then((result) => setTodos(result.data))
+      .catch((err) => console.log(err))
+  }, [todos])
 
   const handleEdit = async (id) => {
-
-    const todo_edit = await axios.put(`${backendUrl}/update/${id}`)
-    console.log(todo_edit);
-    
-
+    await axios.put(`${backendUrl}/update/${id}`)
   }
 
   const handleDelete = async (id) => {
-
-    const todo_delete = await axios.delete(`${backendUrl}/delete/${id}`)
-    console.log(todo_delete);
-
+    await axios.delete(`${backendUrl}/delete/${id}`)
   }
 
   return (
-     <div className="main"> 
-       <div className="head">
-       <img src={icon} alt=""  style={{width:"40px", height:"40px"}}/>  
-         <p >Your To-Do Tasks</p>
-       </div>
-       <div className="content">
-          {
-            todos.length === 0 ? 
-            <div className="record">No record !</div> :
-            todos.map((todo, index) => (
-              <div  key ={index}  className="content2"> 
-              <div className="all_task" >
-                <img src={todo.done ? tick : not_tick} alt=""
-                  onClick={() => {handleEdit(todo._id)}} />
-                <p className={`${todo.done ? "linethrough" : ""}`} >{todo.task}</p>
-                </div>
-        
-                            
-                <img 
-                  src={delete_task} 
-                  alt="delete" 
-                  className="delete-icon" // Added this class
-                  onClick={() => handleDelete(todo._id)}
-                />
+    <div className="main"> 
+      <div className="head">
+        <img src={icon} alt="icon" style={{width:"50px", height:"50px"}}/>  
+        <p>Your To-Do Tasks</p>
+      </div>
+      <div className="content">
+        {
+          todos.length === 0 ? 
+          <div className="record">No tasks found. Add some!</div> :
+          todos.map((todo, index) => (
+            <div key={index} className="content2"> 
+              <div className="all_task" onClick={() => handleEdit(todo._id)}>
+                <img src={todo.done ? tick : not_tick} alt="status" />
+                <p className={todo.done ? "linethrough" : ""}>{todo.task}</p>
               </div>
-            ))
-          }
-       </div>
-             <Link to="/" className="nav-link">Add To-Do Task</Link>
-       
-             
-       </div>
+              <img 
+                src={delete_task} 
+                alt="delete" 
+                className="delete-icon" 
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevents triggering handleEdit when deleting
+                  handleDelete(todo._id);
+                }}
+              />
+            </div>
+          ))
+        }
+      </div>
+      <Link to="/" className="nav-link">Add New Task</Link>
+    </div>
   )
 }
 
