@@ -1,12 +1,14 @@
 /* ===== HOME PAGE ===== */
+
+
 .main1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   background: white;
   
-  width: 98%; 
-  max-width: 1600px; 
+  width: 100%; /* Changed from 98% */
+  max-width: 1800px; /* Increased from 1600px */
   min-height: 500px;
   
   padding: 80px 100px; 
