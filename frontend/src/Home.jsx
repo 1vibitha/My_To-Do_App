@@ -54,7 +54,7 @@ const Home = () => {
                   onClick={() => {handleEdit(todo._id)}} />
                 <p className={`${todo.done ? "linethrough" : ""}`} >{todo.task}</p>
                 </div>
-                // Replace the delete image line with this:
+        
                 <img 
                   src={delete_task} 
                   className="delete-icon" 
