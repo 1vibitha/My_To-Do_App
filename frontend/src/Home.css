@@ -5,11 +5,11 @@
   align-items: center;
   background: white;
   
-  width: 95%; 
-  max-width: 1400px; 
+  width: 98%; 
+  max-width: 1600px; 
   min-height: 500px;
   
-  padding: 80px 80px; 
+  padding: 80px 100px; 
   
   border-radius: 16px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -28,6 +28,7 @@
   width: 100%;
   justify-content: flex-start;
   letter-spacing: -0.5px;
+  white-space: nowrap;
 }
 
 .head img {
@@ -49,7 +50,7 @@
   justify-content: space-between;
   background: #fafafa;
   
-  padding: 28px 40px; 
+  padding: 30px 50px; 
   border-radius: 8px;
   border: 1px solid transparent;
   transition: all 0.2s ease;
