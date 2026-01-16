@@ -7,8 +7,8 @@
   align-items: center;
   background: white;
   
-  width: 100%; /* Changed from 98% */
-  max-width: 1800px; /* Increased from 1600px */
+  width: 100%;
+  max-width: 1800px; /* This will now work properly */
   min-height: 500px;
   
   padding: 80px 100px; 

@@ -12,12 +12,13 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center; 
-  padding: 40px 20px;
+  padding: 40px 10px; /* Reduced horizontal padding from 20px to 10px */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #root {
   width: 100%;
+  max-width: 2000px; /* Added max-width here to control the root container */
   display: flex;
   justify-content: center;
 }
