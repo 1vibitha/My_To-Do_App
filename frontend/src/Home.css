@@ -1,38 +1,44 @@
-/* ===== HOME PAGE CONTAINER ===== */
+/* ===== HOME PAGE ===== */
 .main1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  width: 95%;
-  /* Increased from 800px to 1000px for a wider look */
-  max-width: 1000px; 
-  min-height: 550px;
-  padding: 60px 50px;
-  border-radius: 35px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+  
+  /* CHANGE: Increased width and max-width for a much wider look */
+  width: 90%; 
+  max-width: 1200px; 
+  
+  min-height: 500px;
+  
+  /* CHANGE: Reduced side padding so tasks have more room to expand */
+  padding: 60px 40px; 
+  
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
   gap: 40px;
-  margin: 20px auto;
+  margin: 40px auto; /* Centers the whole app on the screen */
 }
 
 /* HEADER */
 .head {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 15px;
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 700;
   color: #2d3436;
-  letter-spacing: -0.5px;
+  width: 100%; /* Spans the full width */
+  justify-content: flex-start;
 }
 
 /* CONTENT AREA */
 .content {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  width: 100%; /* Spans the full width of .main1 */
+  gap: 20px;
+  width: 100%; /* Critical: Makes the list container fill the wide parent */
 }
 
 /* INDIVIDUAL TASK ROW (The White Divs) */
@@ -40,97 +46,91 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #ffffff;
-  /* Increased padding for a more spacious, "breathable" feel */
-  padding: 25px 35px; 
-  border-radius: 22px;
+  background: white;
+  
+  /* CHANGE: Increased padding for a more "expensive" spacious feel */
+  padding: 30px 40px; 
+  
+  border-radius: 20px;
   border: 1px solid #f1f2f6;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  
+  /* CHANGE: Ensures the white div stretches to the full width of .content */
+  width: 100%; 
+  box-sizing: border-box; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
 }
 
 .content2:hover {
-  /* Subtle lift and glow on hover */
-  transform: translateY(-3px) scale(1.005);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
-  border-color: #ff5c0044;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  border-color: #ff5c0033;
 }
 
 /* TASK CONTENT (Icon + Text) */
 .all_task {
   display: flex;
   align-items: center;
-  gap: 22px;
-  flex: 1;
+  gap: 25px;
+  flex: 1; /* Takes up all available space to push delete icon to the right */
   cursor: pointer;
 }
 
 .all_task p {
-  font-size: 20px;
+  font-size: 22px; /* Larger font for the wider layout */
   color: #2d3436;
   font-weight: 500;
   margin: 0;
-  line-height: 1.2;
 }
 
 /* COMPLETED TASK STYLE */
 .linethrough {
   text-decoration: line-through;
   color: #b2bec3 !important;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 /* ICONS */
 .all_task img {
-  width: 28px;
-  height: 28px;
-  transition: transform 0.2s ease;
-}
-
-.all_task img:active {
-  transform: scale(0.8);
+  width: 30px;
+  height: 30px;
 }
 
 .delete-icon {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   cursor: pointer;
-  opacity: 0.3;
-  transition: all 0.2s ease;
+  opacity: 0.4;
+  transition: all 0.2s;
   margin-left: 20px;
 }
 
 .delete-icon:hover {
   opacity: 1;
-  transform: scale(1.25);
-  filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.2));
+  transform: scale(1.2);
 }
 
 /* EMPTY STATE */
 .record {
-  font-size: 22px;
+  font-size: 24px;
   color: #b2bec3;
   text-align: center;
-  margin-top: 40px;
-  font-weight: 400;
+  margin-top: 20px;
 }
 
-/* NAV LINK (Button-like style) */
+/* NAV LINK */
 .nav-link {
-  font-size: 17px;
+  font-size: 18px;
   text-decoration: none;
   color: #636e72;
   font-weight: 600;
-  margin-top: 25px;
-  padding: 12px 25px;
-  border-radius: 12px;
-  transition: all 0.2s;
-  border: 1px solid transparent;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.3s;
 }
 
 .nav-link:hover {
   color: #ff5c00;
-  background: #ff5c000d;
-  border-color: #ff5c0022;
+  background: rgba(255, 92, 0, 0.05);
 }
