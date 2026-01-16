@@ -54,9 +54,13 @@ const Home = () => {
                   onClick={() => {handleEdit(todo._id)}} />
                 <p className={`${todo.done ? "linethrough" : ""}`} >{todo.task}</p>
                 </div>
-                <img src={delete_task} alt="" style={{ width : "25px"}} 
-                onClick={() => {handleDelete(todo._id)}}
-                 />
+                // Replace the delete image line with this:
+                <img 
+                  src={delete_task} 
+                  className="delete-icon" 
+                  alt="delete"
+                  onClick={() => {handleDelete(todo._id)}}
+                />
               </div>
             ))
           }
