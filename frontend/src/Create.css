@@ -1,90 +1,79 @@
-
-.main {
+/* ===== CREATE PAGE ===== */
+.create-container { /* Renamed class to avoid conflict with Home.css */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
   backdrop-filter: blur(12px);
-  width: 95%; 
-  max-width: 800px;
-  margin: 0 auto; 
-  padding: 60px 50px; 
-  border-radius: 30px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-  gap: 40px;
+  
+  /* WIDE VIEWPORT LOGIC */
+  width: 90vw;           
+  max-width: 1100px;     
+  min-height: 450px;
+  
+  padding: 80px 60px;
+  border-radius: 40px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  gap: 50px;
+  margin: 20px auto;
 }
-
 
 .head {
   display: flex;
   align-items: center;
-  gap: 15px;
-  font-size: 28px;
-  font-weight: 700;
-  color: #2d3436;
+  gap: 20px;
+  font-size: 32px;
+  font-weight: 800;
+  color: #1a1a1a;
 }
 
 .mainbox {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   width: 100%;
-  justify-content: center;
+  max-width: 850px; /* Centers the input group within the wide card */
 }
 
-
-input {
-  flex: 1; 
-  font-size: 18px;
-  color: #2d3436;
-  height: 60px;
-  border-radius: 15px;
+.mainbox input {
+  flex: 1;
+  font-size: 20px;
+  height: 70px;
+  border-radius: 20px;
   border: 2px solid #edf2f7;
-  padding: 0 25px;
-  transition: all 0.3s ease;
+  padding: 0 30px;
   background: #f8fafc;
+  transition: all 0.3s;
 }
 
-input:focus {
+.mainbox input:focus {
   outline: none;
   border-color: #ff5c00;
   background: white;
-  box-shadow: 0 0 0 4px rgba(255, 92, 0, 0.1);
+  box-shadow: 0 0 0 5px rgba(255, 92, 0, 0.1);
 }
-
-input::placeholder {
-  color: #b2bec3;
-}
-
 
 .add {
-  width: 160px;
-  height: 60px;
-  border-radius: 15px;
+  width: 180px;
+  height: 70px;
+  border-radius: 20px;
   background: linear-gradient(45deg, #ff5c00, #ff8c42);
   color: white;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 
 .add:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 92, 0, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 92, 0, 0.3);
 }
 
 .nav-link {
-  font-size: 16px;
+  font-size: 18px;
   text-decoration: none;
   color: #636e72;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.2s;
-  border-bottom: 1px solid transparent;
-}
-
-.nav-link:hover {
-  color: #ff5c00;
-  border-bottom: 1px solid #ff5c00;
 }

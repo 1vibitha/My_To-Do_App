@@ -1,4 +1,4 @@
-
+/* ===== GLOBAL STYLES ===== */
 * {
   margin: 0;
   padding: 0;
@@ -7,17 +7,18 @@
 
 body, html {
   min-height: 100vh;
-
-  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  /* Premium Soft Gradient */
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%) no-repeat fixed;
   display: flex;
   justify-content: center;
   align-items: center; 
-  padding: 40px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 #root {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
